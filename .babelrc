@@ -1,4 +1,4 @@
 {
-  "plugins": ["syntax-flow", "transform-class-properties"],
+  "plugins": ["transform-flow-strip-types", "transform-class-properties", "babel-root-import"],
   "presets": ["es2015"]
 }

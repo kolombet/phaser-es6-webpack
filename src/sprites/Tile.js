@@ -1,8 +1,6 @@
 import Phaser from 'phaser'
 
 export default class extends Phaser.Sprite {
-  isOccupied:boolean;
-
   constructor ({game, x, y, asset, isOccupied}) {
     super(game, x, y, asset);
     this.isOccupied = isOccupied;
