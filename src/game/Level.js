@@ -1,7 +1,7 @@
 import Array2D from '~/src/util/Array2D'
 import {Cookie, CookieType} from './Cookie'
 
-export class Level {
+export default class Level {
     numColumns = 9;
     numRows = 9;
     cookies:Array2D;

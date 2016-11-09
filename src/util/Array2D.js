@@ -1,7 +1,7 @@
 /**
  * Created by PlariumCrew on 11/9/2016.
  */
-class Array2D {
+export default class Array2D {
     columns;
     rows;
     _array;

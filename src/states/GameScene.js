@@ -25,6 +25,8 @@ export default class GameScene extends Phaser.State {
         console.log("test");
 
         var gameViewController = new GameViewController(this);
+        // https://www.raywenderlich.com/125311/make-game-like-candy-crush-spritekit-swift-part-1
+        // var l = new Level();
 
         this.gameLayer = new Phaser.Sprite();
         this.gameLayer.position = new Phaser.Point(
