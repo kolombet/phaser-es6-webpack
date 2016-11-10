@@ -1,7 +1,7 @@
 import Phaser from 'phaser'
 
 /**
- * Created by PlariumCrew on 11/9/2016.
+ * Created by Kolombet on 11/9/2016.
  */
 export class CookieType {
     constructor(type) {
@@ -37,12 +37,16 @@ export class CookieType {
 }
 
 export class Cookie {
-    sprite:Phaser.Sprite;
+    sprite: Phaser.Sprite;
 
     constructor({column, row, cookieType}) {
         this.column = column;
         this.row = row;
         this.cookieType = cookieType;
+    }
+
+    getImageName() {
+        return 'gem' + (this.cookieType.typeID+1);
     }
 
     hashValue(): number {

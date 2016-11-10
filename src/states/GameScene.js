@@ -1,5 +1,5 @@
 /**
- * Created by PlariumCrew on 11/9/2016.
+ * Created by Kolombet on 11/9/2016.
  */
 /* globals __DEV__ */
 import Phaser from 'phaser'
@@ -22,7 +22,7 @@ export default class GameScene extends Phaser.State {
         banner.fontSize = 40
         banner.fill = '#77BFA3'
         banner.anchor.setTo(0.5)
-        console.log("test");
+        // console.log("test");
 
         var gameViewController = new GameViewController(this);
         // https://www.raywenderlich.com/125311/make-game-like-candy-crush-spritekit-swift-part-1
@@ -33,7 +33,7 @@ export default class GameScene extends Phaser.State {
             this.numColumns * this.tileWidth / 2, this.numRows * this.tileHeight
         );
 
-        this.cookiesLayer = this.game.add.sprite(0, 0, 'rect');
+        // this.cookiesLayer = this.game.add.sprite(0, 0, 'rect');
         // this.game.state.add()
         //this.add(this.cookiesLayer);
         // const a = CookieType.getRandomType()
@@ -41,7 +41,7 @@ export default class GameScene extends Phaser.State {
 
     addSprites(cookies:Set) {
         cookies.forEach((el:Cookie) => {
-            let sprite = this.game.add.sprite(0, 0, "rect");
+            let sprite = this.game.add.sprite(0, 0, el.getImageName());
             sprite.position = this.pointFor(el.column, el.row);
             el.sprite = sprite;
         })

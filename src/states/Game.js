@@ -1,7 +1,7 @@
 /* globals __DEV__ */
 import Phaser from 'phaser'
-import Tile from '../sprites/Tile'
-import {setResponsiveWidth} from '../utils'
+// import Tile from '../sprites/Tile'
+// import {setResponsiveWidth} from '../utils'
 
 export default class extends Phaser.State {
     init() {
@@ -11,39 +11,37 @@ export default class extends Phaser.State {
     }
 
     create() {
-        let banner = this.add.text(this.game.world.centerX, this.game.height - 30, 'Test')
-        banner.font = 'Nunito'
-        banner.fontSize = 40
-        banner.fill = '#77BFA3'
-        banner.anchor.setTo(0.5)
-
-        this.tile = new Tile({
-            game: this.game,
-            x: this.game.world.centerX,
-            y: this.game.world.centerY,
-            asset: 'rect'
-        })
-
-        var map = []
-        for (var x = 0; x < 10; x++)
-        {
-            map[x] = [];
-            for (var y = 0; y < 10; y++)
-            {
-                var tile = new Tile({
-                    game: this.game,
-                    x: x*32,
-                    y: y*32,
-                    asset: 'rect',
-                    isOccupied: false
-                });
-                // tile.x = x;
-                // tile.y = y;
-                // tile.isOccupied = false;
-                map[x][y] = tile;
-                this.game.add.existing(tile);
-            }
-        }
+        // let banner = this.add.text(this.game.world.centerX, this.game.height - 30, 'Test')
+        // banner.font = 'Nunito'
+        // banner.fontSize = 40
+        // banner.fill = '#77BFA3'
+        // banner.anchor.setTo(0.5)
+        //
+        // this.tile = new Tile({
+        //     game: this.game,
+        //     x: this.game.world.centerX,
+        //     y: this.game.world.centerY,
+        //     asset: 'rect'
+        // })
+        //
+        // var map = []
+        // for (var x = 0; x < 10; x++)
+        // {
+        //     map[x] = [];
+        //     for (var y = 0; y < 10; y++)
+        //     {
+        //         var tile = new Tile({
+        //             game: this.game,
+        //             x: x*32,
+        //             y: y*32,
+        //             asset: 'rect',
+        //             isOccupied: false
+        //         });
+        //
+        //         map[x][y] = tile;
+        //         this.game.add.existing(tile);
+        //     }
+        // }
 
         // console.log(JSON.stringify(map));
 

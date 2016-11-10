@@ -1,15 +1,15 @@
-/**
- * Created by PlariumCrew on 11/9/2016.
- */
+/* @flow */
 export default class Array2D {
-    columns;
-    rows;
-    _array;
+    columns:number;
+    rows:number;
+    _array:Array<mixed>;
+    size:number;
 
-    constructor(columns, rows) {
+    constructor(columns:number, rows:number) {
         this.columns = columns;
         this.rows = rows;
-        this._array = [];
+        this.size = columns * rows;
+        this._array = new Array(this.size);
     }
 
     /**
@@ -17,11 +17,21 @@ export default class Array2D {
      * @param column
      * @param row
      */
-    g(column, row) {
-        return this._array[row * this.columns + column];
+    g(column:number, row:number) {
+        var index = row * this.columns + column;
+        if (index < 0 || index > this.size)
+            throw new Error("out of bounds");
+        return this._array[index];
     }
 
-    s(column, row, value) {
-        this._array[row * this.columns + column] = value;
+    s(column:number, row:number, value:any) {
+        let index = row * this.columns + column;
+        if (index < 0 || index > this.size)
+            throw new Error("out of bounds");
+        this._array[index] = value;
+    }
+
+    toString() {
+        return JSON.stringify(this._array);
     }
 }
