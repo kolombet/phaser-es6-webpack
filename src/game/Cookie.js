@@ -50,10 +50,14 @@ export class Cookie {
     }
 
     hashValue(): number {
-        return row * 10 + column;
+        return this.row * 10 + this.column;
     }
 
     eq(to: Cookie): boolean {
         return this.column == to.column && this.row == to.row;
+    }
+
+    toString(): string {
+        return `${this.column}x${this.row}`
     }
 }
